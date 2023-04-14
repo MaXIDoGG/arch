@@ -14,7 +14,17 @@ def func(x):
 
 x = [i for i in range(0, 100)]
 y = [func(i) for i in range(0, 100)]
-plt.plot(x, y)
+fig, axs = plt.subplots(2)
+fig.suptitle('Два графика')
+axs[0].plot(x, y)
+
+x1 = []
+y1 = []
+for theta in range(0, 31):
+    r = ((theta)**2)
+    x1.append(r*np.cos(theta))
+    y1.append(r*np.sin(theta))
+axs[1].plot(x1, y1)
 
 coeff = [a, b, c, d]
 print(np.roots(coeff))
